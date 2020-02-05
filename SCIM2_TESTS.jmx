@@ -70,6 +70,11 @@
             <stringProp name="Argument.value">9443</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="tenantDomain" elementType="Argument">
+            <stringProp name="Argument.name">tenantDomain</stringProp>
+            <stringProp name="Argument.value">carbon.super</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
@@ -110,7 +115,7 @@
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="setUp Thread Group - PRE_CONDTION_GROUP_SCENARIO" enabled="false">
+      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="setUp Thread Group - PRE_CONDTION_GROUP_SCENARIO" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -139,7 +144,7 @@
           <stringProp name="HTTPSampler.port">${isServerPort}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/scim2/Users</stringProp>
+          <stringProp name="HTTPSampler.path">/t/${tenantDomain}/scim2/Users</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -213,7 +218,7 @@
           <stringProp name="HTTPSampler.port">${isServerPort}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/scim2/Users</stringProp>
+          <stringProp name="HTTPSampler.path">/t/${tenantDomain}/scim2/Users</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -273,11 +278,11 @@
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
+      <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
         <stringProp name="ConstantTimer.delay">300</stringProp>
       </ConstantTimer>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group -  USER_SCENARIOS" enabled="false">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group -  USER_SCENARIOS" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -306,7 +311,7 @@
           <stringProp name="HTTPSampler.port">${isServerPort}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/scim2/Users</stringProp>
+          <stringProp name="HTTPSampler.path">/t/${tenantDomain}/scim2/Users</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -368,7 +373,7 @@
           <stringProp name="HTTPSampler.port">${isServerPort}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/scim2/Users/${userId}</stringProp>
+          <stringProp name="HTTPSampler.path">/t/${tenantDomain}/scim2/Users/${userId}</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -410,7 +415,7 @@
           <stringProp name="HTTPSampler.port">${isServerPort}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/scim2/Users/${userId}</stringProp>
+          <stringProp name="HTTPSampler.path">/t/${tenantDomain}/scim2/Users/${userId}</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -452,7 +457,7 @@
           <stringProp name="HTTPSampler.port">${isServerPort}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/scim2/Users?startIndex=1&amp;count=10&amp;domain=PRIMARY&amp;filter=userName+sw+ki+and+name.familyName+co+ack&amp;attributes=userName,name.familyName</stringProp>
+          <stringProp name="HTTPSampler.path">/t/${tenantDomain}/scim2/Users?startIndex=1&amp;count=10&amp;domain=PRIMARY&amp;filter=userName+sw+ki+and+name.familyName+co+ack&amp;attributes=userName,name.familyName</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -501,7 +506,7 @@
           <stringProp name="HTTPSampler.port">${isServerPort}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/scim2/Users/.search</stringProp>
+          <stringProp name="HTTPSampler.path">/t/${tenantDomain}/scim2/Users/.search</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -554,7 +559,7 @@
           <stringProp name="HTTPSampler.port">${isServerPort}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/scim2/Users/${userId}</stringProp>
+          <stringProp name="HTTPSampler.path">/t/${tenantDomain}/scim2/Users/${userId}</stringProp>
           <stringProp name="HTTPSampler.method">PATCH</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -607,7 +612,7 @@
           <stringProp name="HTTPSampler.port">${isServerPort}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/scim2/Users/${userId}</stringProp>
+          <stringProp name="HTTPSampler.path">/t/${tenantDomain}/scim2/Users/${userId}</stringProp>
           <stringProp name="HTTPSampler.method">PUT</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -653,7 +658,7 @@
           <stringProp name="HTTPSampler.port">${isServerPort}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/scim2/Users/${userId}</stringProp>
+          <stringProp name="HTTPSampler.path">/t/${tenantDomain}/scim2/Users/${userId}</stringProp>
           <stringProp name="HTTPSampler.method">DELETE</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -692,7 +697,7 @@
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group - GROUP_SCENARIOS" enabled="false">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group - GROUP_SCENARIOS" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -722,7 +727,7 @@
           <stringProp name="HTTPSampler.port">${isServerPort}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/scim2/Groups</stringProp>
+          <stringProp name="HTTPSampler.path">/t/${tenantDomain}/scim2/Groups</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -784,7 +789,7 @@
           <stringProp name="HTTPSampler.port">${isServerPort}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/scim2/Groups/${groupId}</stringProp>
+          <stringProp name="HTTPSampler.path">/t/${tenantDomain}/scim2/Groups/${groupId}</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -826,7 +831,7 @@
           <stringProp name="HTTPSampler.port">${isServerPort}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/scim2/Groups/</stringProp>
+          <stringProp name="HTTPSampler.path">/t/${tenantDomain}/scim2/Groups/</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -865,7 +870,7 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&quot;schemas&quot;:[&quot;urn:ietf:params:scim:api:messages:2.0:PatchOp&quot;],&quot;Operations&quot;:[{&quot;op&quot;:&quot;add&quot;,&quot;value&quot;:{&quot;members&quot;:[{&quot;display&quot;: &quot;${groupMember1}&quot;,&quot;$ref&quot;:&quot;https://${isServerHost}:${isServerPort}/scim2/Users/${userIdGroupMember1}&quot;,&quot;value&quot;: &quot;${userIdGroupMember1}&quot;}]}}]}</stringProp>
+                <stringProp name="Argument.value">{&quot;schemas&quot;:[&quot;urn:ietf:params:scim:api:messages:2.0:PatchOp&quot;],&quot;Operations&quot;:[{&quot;op&quot;:&quot;add&quot;,&quot;value&quot;:{&quot;members&quot;:[{&quot;display&quot;: &quot;${groupMember1}&quot;,&quot;$ref&quot;:&quot;https://${isServerHost}:${isServerPort}/t/${tenantDomain}/scim2/Users/${userIdGroupMember1}&quot;,&quot;value&quot;: &quot;${userIdGroupMember1}&quot;}]}}]}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
               </elementProp>
@@ -875,7 +880,7 @@
           <stringProp name="HTTPSampler.port">${isServerPort}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/scim2/Groups/${groupId}</stringProp>
+          <stringProp name="HTTPSampler.path">/t/${tenantDomain}/scim2/Groups/${groupId}</stringProp>
           <stringProp name="HTTPSampler.method">PATCH</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -941,7 +946,7 @@
           <stringProp name="HTTPSampler.port">${isServerPort}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/scim2/Groups/${groupId}</stringProp>
+          <stringProp name="HTTPSampler.path">/t/${tenantDomain}/scim2/Groups/${groupId}</stringProp>
           <stringProp name="HTTPSampler.method">PUT</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1000,7 +1005,7 @@
           <stringProp name="HTTPSampler.port">${isServerPort}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/scim2/Groups?filter=displayName+eq+${groupName}</stringProp>
+          <stringProp name="HTTPSampler.path">/t/${tenantDomain}/scim2/Groups?filter=displayName+eq+${groupName}</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1049,7 +1054,7 @@
           <stringProp name="HTTPSampler.port">${isServerPort}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/scim2/Groups/.search</stringProp>
+          <stringProp name="HTTPSampler.path">/t/${tenantDomain}/scim2/Groups/.search</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1102,7 +1107,7 @@
           <stringProp name="HTTPSampler.port">${isServerPort}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/scim2/Groups/${groupId}</stringProp>
+          <stringProp name="HTTPSampler.path">/t/${tenantDomain}/scim2/Groups/${groupId}</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1148,7 +1153,7 @@
           <stringProp name="HTTPSampler.port">${isServerPort}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/scim2/Groups/${groupId}</stringProp>
+          <stringProp name="HTTPSampler.path">/t/${tenantDomain}/scim2/Groups/${groupId}</stringProp>
           <stringProp name="HTTPSampler.method">DELETE</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1216,7 +1221,7 @@
           <stringProp name="HTTPSampler.port">${isServerPort}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/scim2/Me</stringProp>
+          <stringProp name="HTTPSampler.path">/t/${tenantDomain}/scim2/Me</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1258,7 +1263,7 @@
           <stringProp name="HTTPSampler.port">${isServerPort}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/scim2/Me</stringProp>
+          <stringProp name="HTTPSampler.path">/t/${tenantDomain}/scim2/Me</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1307,7 +1312,7 @@
           <stringProp name="HTTPSampler.port">${isServerPort}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/scim2/Me</stringProp>
+          <stringProp name="HTTPSampler.path">/t/${tenantDomain}/scim2/Me</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1360,7 +1365,7 @@
           <stringProp name="HTTPSampler.port">${isServerPort}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/scim2/Me</stringProp>
+          <stringProp name="HTTPSampler.path">/t/${tenantDomain}/scim2/Me</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1406,7 +1411,7 @@
           <stringProp name="HTTPSampler.port">${isServerPort}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/scim2/Me</stringProp>
+          <stringProp name="HTTPSampler.path">/t/${tenantDomain}/scim2/Me</stringProp>
           <stringProp name="HTTPSampler.method">DELETE</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
